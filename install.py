@@ -17,23 +17,23 @@ cd /home
 sudo useradd -m -s /bin/bash pan_dhcp
 sudo chmod 755 pan_dhcp
 cd pan_dhcp
-mkdir pan_dhcp
+sudo mkdir pan_dhcp
 chmod 777 pan_dhcp
 cd pan_dhcp
 
 #create the devices database
 echo 'CREATE TABLE DevicesDynamic (DeviceName "TEXT", DeviceMac "TEXT", Groups "Text");' > create.sql
 sqlite3 devices.sql < create.sql
-rm create.sql
+sudo rm create.sql
 chmod 777 devices.sql
 
 #install the code that updates the firewall
 wget https://raw.githubusercontent.com/p0lr/PAN_DUG/master/dhcp.py
-chmod 777 dhcp.py
+sudo chmod 777 dhcp.py
 
 #update cron to execute the script every minute
 cd /etc/cron.d
-sudo wget https://raw.githubusercontent.com/p0lr/PAN_DUG/master/pan_dhcp_cron
+sudo wget https://raw.githubusercontent.com/snavesa/dus/master/pan_dhcp_cron
 
 #install apache2 and configure it to allow cgi
 sudo apt-get install apache2 -y
