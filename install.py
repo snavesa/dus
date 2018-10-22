@@ -28,7 +28,7 @@ sudo rm create.sql
 chmod 777 devices.sql
 
 #install the code that updates the firewall
-wget https://raw.githubusercontent.com/p0lr/PAN_DUG/master/dhcp.py
+wget https://raw.githubusercontent.com/snavesa/dus/master/dhcp.py
 sudo chmod 777 dhcp.py
 
 #update cron to execute the script every minute
