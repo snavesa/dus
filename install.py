@@ -13,9 +13,10 @@ sudo apt-get install python-requests -y
 sudo apt-get install sqlite3 -y
 
 #set some necessary permissions
-#cd /home
-#sudo chmod 755 pi
-cd ~/
+cd /home
+sudo useradd -m -s /bin/bash pan_dhcp
+sudo chmod 755 pan_dhcp
+cd pan_dhcp
 mkdir pan_dhcp
 chmod 777 pan_dhcp
 cd pan_dhcp
@@ -28,13 +29,11 @@ chmod 777 devices.sql
 
 #install the code that updates the firewall
 wget https://raw.githubusercontent.com/p0lr/PAN_DUG/master/dhcp.py
-#change location of dbfile on line 12, from pi to whatever location defined
 chmod 777 dhcp.py
 
 #update cron to execute the script every minute
 cd /etc/cron.d
 sudo wget https://raw.githubusercontent.com/p0lr/PAN_DUG/master/pan_dhcp_cron
-#change location referenced in pan_dhcp_cron, from pi to whatever location defined
 
 #install apache2 and configure it to allow cgi
 sudo apt-get install apache2 -y
@@ -44,10 +43,8 @@ sudo service apache2 restart
 #copy cgi scripts into the cgi directory
 cd /usr/lib/cgi-bin
 sudo wget https://raw.githubusercontent.com/p0lr/PAN_DUG/master/index.cgi
-#change location of dbfile on line 7, from pi to whatever location defined
 sudo chmod 755 index.cgi
 sudo wget https://raw.githubusercontent.com/p0lr/PAN_DUG/master/keygen.cgi
-#change location of fwcredsfile on line 10, from pi to whatever location defined
 sudo chmod 755 keygen.cgi
 
 #copy default web page
