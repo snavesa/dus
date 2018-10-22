@@ -42,17 +42,17 @@ sudo service apache2 restart
 
 #copy cgi scripts into the cgi directory
 cd /usr/lib/cgi-bin
-sudo wget https://raw.githubusercontent.com/p0lr/PAN_DUG/master/index.cgi
+sudo wget https://raw.githubusercontent.com/snavesa/dus/master/index.cgi
 sudo chmod 755 index.cgi
-sudo wget https://raw.githubusercontent.com/p0lr/PAN_DUG/master/keygen.cgi
+sudo wget https://raw.githubusercontent.com/snavesa/dus/master/keygen.cgi
 sudo chmod 755 keygen.cgi
 
 #copy default web page
 cd /var/www/html
 sudo rm index.html
-sudo wget https://raw.githubusercontent.com/p0lr/PAN_DUG/master/index.html
+sudo wget https://raw.githubusercontent.com/snavesa/dus/master/index.html
 sudo chmod 755 index.html
-sudo wget https://raw.githubusercontent.com/p0lr/PAN_DUG/master/dus.css
+sudo wget https://raw.githubusercontent.com/snavesa/dus/master/dus.css
 sudo chmod 755 dus.css
-sudo wget https://raw.githubusercontent.com/p0lr/PAN_DUG/master/logo.svg
+sudo wget https://raw.githubusercontent.com/snavesa/dus/master/logo.svg
 sudo chmod 755 logo.svg
