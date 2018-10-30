@@ -1,2 +1,2 @@
 # dus
-Dynamic User System PanOS, updated from raspbian to ubuntu
+Dynamic User System PanOS, migrated from raspbian to ubuntu
